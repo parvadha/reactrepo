@@ -1,11 +1,10 @@
+import AddColor from "./movieComponents/colorgame"
+import "./App.css"
 function App()
 {
-    const [movies,setMovies]=useState([
-        {id:"1",}
-    ])
     return(
         <div>
-            <h1>App</h1>
+            <AddColor/>
         </div>
     )
 }

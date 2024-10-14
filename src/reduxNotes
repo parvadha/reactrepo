@@ -1,0 +1,6 @@
+Redux
+-----------
+state---initial state
+action---delete,edit,create,read,increment
+reducer--implementation of action
+dispatch---send action to reducer function

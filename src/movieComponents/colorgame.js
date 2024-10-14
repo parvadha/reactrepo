@@ -1,3 +1,4 @@
+import { Button } from "@mui/material"
 import { useState } from "react"
 
 function AddColor()
@@ -15,7 +16,7 @@ function AddColor()
             {color}
             {/* <input type="text" style={{backgroundColor:color}} onChange={event=>setColor(event.target.value)}/> */}
             <input type="text" style={styles} onChange={event=>setColor(event.target.value)}/>
-            <button onClick={()=>setColorList([...colorList,color])}>Addcolor</button>
+            <Button onClick={()=>setColorList([...colorList,color])}>Addcolor</Button>
             {
                 colorList.map(clr=><ColorBox color={clr}/>)
             }

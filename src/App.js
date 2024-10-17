@@ -1,5 +1,5 @@
-import { createContext, useState } from "react"
-import { Link, Route, Routes, useNavigate } from "react-router-dom"
+import { useState} from "react"
+import { Route, Routes, useNavigate } from "react-router-dom"
 import "./App.css"
 import MovieList from "./movieComponents/movies"
 import AddColor from "./movieComponents/colorgame"
@@ -12,11 +12,11 @@ import {ThemeProvider,createTheme} from "@mui/material/styles"
 import {Paper} from "@mui/material"
 import Brightness7Icon from '@mui/icons-material/Brightness7';
 import Brightness4Icon from '@mui/icons-material/Brightness4';
+import EditMovie from "./movieComponents/editmovie"
 function App()
 {
-    const [movies,setMovies]=useState([])
     const navigate=useNavigate()
-    const [mode,setMode]=useState("light")
+    const [mode,setMode]=useState("dark")
 
     const darkTheme=createTheme({
         palette:{
@@ -28,6 +28,7 @@ function App()
     //     color:mode==="light"?"black":"white"
     // }
         // const theme={mode,setMode}
+        
 
     return(
         <ThemeProvider theme={darkTheme}>
@@ -43,12 +44,13 @@ function App()
                 </Toolbar>
                </AppBar>
             <Routes>
-                <Route path="/movies" element={<MovieList movies={movies}/>}/>
+                <Route path="/movies" element={<MovieList/>}/>
                 <Route path="/color-game" element={<AddColor/>}/>
 
                 {/* /movies/add----><AddMovie/> */}
-                <Route path="/movies/add" element={<AddMovie movies={movies} setMovies={setMovies}/>}/>
-                <Route path="/movies/:id" element={<Moviedetail movies={movies}/>}/>
+                <Route path="/movies/add" element={<AddMovie/>}/>
+                <Route path="/movies/:id" element={<Moviedetail/>}/>
+                <Route path="/movies/edit/:id" element={<EditMovie/>}/>
                 <Route path="/" element={<Home/>}/>
 
             </Routes>

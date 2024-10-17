@@ -6,4 +6,42 @@ Goat
 ------
 <iframe width="768" height="322" src="https://www.youtube.com/embed/jxCRlebiebw" title="The GOAT (Official Trailer) Tamil: Thalapathy Vijay | Venkat Prabhu | Yuvan Shankar Raja | T-Series" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 The Greatest of All Time (also marketed as GOAT) is a 2024 Indian Tamil-language action thriller film directed by Venkat Prabhu and produced by AGS ...
-https://static.toiimg.com/thumb/msid-112527716,width-1280,height-720,resizemode-4/112527716.jpg
+https://static.toiimg.com/thumb/msid-112527716,width-1280,height-720,resi
+zemode-4/112527716.jpg
+
+
+
+<iframe width="1056" height="594" src="https://www.youtube.com/embed/-NEVvOEPubA" title="Vaazhai - Official Trailer | Kalaiyarasan | Nikhila Vimal | Santhosh Narayanan | Mari Selvaraj" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+https://i.ytimg.com/vi/NQvzypBbMqc/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLBnhpRx-Nkw-rphur_fUlkRjCz_CQ
+React Lifecycle
+---------------------
+1.Mounting 
+    constructor--usesate,render()--return,
+    componentDidMount()
+    useEffect(cbfun,[])-called only once after initial render
+2.updating
+        useEffect(fun,[state,props])---first execute after initial render,then runs on updating dependency array
+3.UnMounting
+useEffect(fun()
+{
+    return ()=>{//before component unmount it will execute}
+},[])
+
+CRUD operation
+--------------------
+Create---fetch("url",{
+    method:"POST",
+    body:newMovieData,
+    headers:{"Content-Type":"application/json"}
+})
+Read --getAllmovies
+            fetch("url",{method:"GET"})
+        getMovieById
+            fetch(`https://66cc16c84290b1c4f19bdcb0.mockapi.io/movies/${movie.id}`,{method:"GET"})
+Update---fetch("url/id",{
+    method:"PUT",
+    body:updatedMovieData,
+    headers:{"Content-Type":"application/json"}
+})
+
+Delete---fetch("url/id",{method:"DELETE"})

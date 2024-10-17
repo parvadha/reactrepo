@@ -2,16 +2,23 @@ import {useState} from 'react'
 import {useNavigate} from "react-router-dom"
 import { Button } from "@mui/material"
 
-function AddMovie({movies,setMovies})
+function AddMovie()
 {
     const [newMovie,setNewMovie]=useState({})
     const navigate=useNavigate()
 
     const addMovie=()=>{
-        // console.log(newMovie)
-        setMovies([...movies,newMovie])
-        console.log(movies)
-        navigate("/movies")
+        console.log(newMovie)
+        // setMovies([...movies,newMovie])
+        // console.log(movies)
+        fetch("https://66cc16c84290b1c4f19bdcb0.mockapi.io/movies",{
+            method:"POST",
+            body:JSON.stringify(newMovie),
+            headers:{
+                "Content-Type":"application/json"
+            }
+        }).then(()=>navigate("/movies"))
+
 
     }
     return(
